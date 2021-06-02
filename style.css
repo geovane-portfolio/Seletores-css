@@ -1,0 +1,44 @@
+* {
+    background-color: #111;
+    color: #fff;
+} 
+a {
+    display: block;
+    text-decoration: none;
+    font-size: 20px;
+}
+div {
+    margin: 20px;
+    height: 30px;
+}
+
+/* seletor por atributo */
+/* [^=] seleciona os que começam */
+a[href^="http"]{
+    background-color: teal;
+}
+/* o [*=] procuram em qualquer lugar da frase */
+a[href*="medicenter"]{
+    background-color: #5f0303;
+}
+/* terminam [$=] */
+a[href$="google"]{
+    background-color: rgb(0, 66, 128);
+}
+
+
+/* pintar somente o elemento vazio */
+div:empty {
+    background-color: #333;
+}
+
+
+/* estilizar somente a primeira letra do p */
+p::first-letter {
+    font-size: 25px;
+    font-weight: bold;
+}
+/* primeira linha */
+p::first-line {
+    background-color: rgb(6, 59, 22);
+}
