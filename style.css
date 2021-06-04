@@ -38,7 +38,6 @@ p::first-line {
     background-color: rgb(6, 59, 22);
 }
 
-
 /* pintar somente o elemento vazio */
 div:empty {
     background-color: #333;
