@@ -7,11 +7,24 @@ a {
     text-decoration: none;
     font-size: 20px;
 }
-div {
-    margin: 20px;
+.sec1 div {
+    margin: 10px;
     height: 30px;
 }
+fieldset {
+    border-radius: 30px;
+}
+legend {
+    font-size: large;
+    border: 1px solid #fff;
+    padding: 5px;
+    border-radius: 10px;
+}
 
+/* pintar somente o elemento vazio */
+div:empty {
+    background-color: #333;
+}
 
 /* seletor por atributo */
 /* [^=] seleciona os que começam */
@@ -29,18 +42,90 @@ a[href$="google"]{
 
 
 /* estilizar somente a primeira letra do p */
-p::first-letter {
+.sec3 p::first-letter {
     font-size: 25px;
     font-weight: bold;
 }
 /* primeira linha */
-p::first-line {
+.sec3 p::first-line {
     background-color: rgb(6, 59, 22);
 }
 
-/* pintar somente o elemento vazio */
-div:empty {
-    background-color: #333;
+
+/* Seletor de Primeiro e último  */
+.border {
+    display: flex;
+    height: auto;
+    margin: 10px;
+}
+.border div {
+    height: 100px;
+    width: 100%;
+    background-color: #5f0303;
+    margin: 0px;
+}
+.border div:first-child {
+    border-radius: 20px 0px 00px 20px;
+}
+.border div:last-child {
+    border-radius: 0px 20px 20px 0px;
 }
 
+/* Seletor negativo */
+/* pintar todos, menos o parágrafo */
+.f5 :not(p) {
+    background-color: #5f0303;
+}
+.f5 div, .f5 a{
+    margin: 16px 0px;
+}
+
+
+/*  Seletor NTH */
+
+/* Selecionar segundo item */
+.div6 div:nth-child(2) {
+    background-color: rgb(0, 66, 128);
+}
+/* selecionar segundo item, de baixo para cima */
+.div6 div:nth-last-child(2) {
+    background-color: #5f0303;
+}
+
+/* Seletor before/after */
+.div7 div, .div7-2 div{
+    background-color: #333;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+    width: 150px;
+
+}
+/* adiciona seta -> no começo do elemento */
+.div7 div::before {
+    content: "->";
+    width: 20px;
+    height: 20px;
+    background-color: #5f0303;
+}
+/* adicionar seta no final do elemento*/
+.div7 div::after {
+    content: "";
+    display: block;
+    position: absolute;
+    margin-top: 20px;
+    border: 20px solid;
+    border-color: #333 transparent transparent transparent;
+}
+/* deslocar a seta para a direta e mudar a direção da seta */
+/* o top conta de cima para baixo os pixels */
+.div7-2 div::after {
+    content: "";
+    display: inline-block;
+    position: absolute;
+    margin-left: 61px;
+    top: 1450px;
+    border: 20px solid;
+    border-color:transparent transparent transparent #333;
+}
 
